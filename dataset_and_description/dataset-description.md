@@ -1,4 +1,4 @@
-PlayerStats.csv is a dataset I created with every NBA player who has suffered an ACL, Achilles, or meniscus injury since the 2009-10 season, along with post-recovery performances and certain characteristics. NBAInjuries.ipynb contains the code I used to evaluate the effect of the injuries, created on Google CoLab. Players were extracted from a larger dataset recording every injury in the NBA from the 2010-2020 seasons and added to this one with the following characteristics: 
+PlayerStats.csv is a dataset I created with every NBA player who has suffered an ACL, Achilles, or meniscus injury since the 2009-10 season, along with post-recovery performances and certain characteristics. Players were extracted from a larger dataset recording every injury in the NBA from the 2010-2020 seasons and added to this one with the following characteristics: 
 
  - Player is the last name, and sometimes first initial, of the player that was injured.
 
