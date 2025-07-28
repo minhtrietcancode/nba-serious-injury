@@ -1,33 +1,64 @@
-PlayerStats.csv is a dataset I created with every NBA player who has suffered an ACL, Achilles, or meniscus injury since the 2009-10 season, along with post-recovery performances and certain characteristics. Players were extracted from a larger dataset recording every injury in the NBA from the 2010-2020 seasons and added to this one with the following characteristics: 
 
- - Player is the last name, and sometimes first initial, of the player that was injured.
+# NBA Serious Injury Analysis: Dataset Description
 
- - Injury type describes the injury with an integer: 0 for torn ACL, 1 for torn Achilles, and 2 for torn meniscus. If a player tore both their ACL and meniscus, they were given a 0, as the ACL is the more significant injury.
+This document provides a detailed description of the `PlayerStats.csv` dataset, which is used for analyzing the impact of serious injuries (ACL, Achilles, and Meniscus tears) on NBA players' performance. The dataset includes information on players who suffered these injuries since the 2009-10 season, along with their pre-injury characteristics and post-recovery performance metrics. The data was compiled from a larger dataset tracking NBA injuries from 2010-2020.
 
- - Season is the season that the injury occurred. For example, if a player was injured in the 2015-16 season, the year 2016 is written.
- 
- - LEBRON diff is the difference in the average on the player's LEBRON score of the two seasons before injury and the two seasons post-recovery. If a player did not play two seasons before or after the injury, only one was used. Scores of -10 in this column indicate that the player did not return to play in the NBA after the injury. This usually meant that the player was never able to fully recover to compete at the NBA level again.
+## Dataset Features:
 
- - BPM diff is the difference in the average on the player's BPM score of the two seasons before injury and the two seasons post-recovery. If a player did not play two seasons before or after the injury, only one was used, and scores of -10 in this column indicate that the player did not return to play in the NBA after the injury.
+*   **Player**: The last name, and sometimes first initial, of the injured player.
 
- - Age indicates the age at which the athlete was injured.
+*   **Injury type**: Categorizes the injury with an integer:
+    *   `0`: Torn ACL
+    *   `1`: Torn Achilles
+    *   `2`: Torn Meniscus
+    *   *Note*: If a player tore both their ACL and meniscus, `0` was assigned due to the ACL being the more significant injury.
 
- - Height indicates the height of the player in inches.
+*   **Season**: The NBA season in which the injury occurred (e.g., `2016` for the 2015-16 season).
 
- - Weight indicates the weight of the player in pounds.
+*   **LEBRON diff**: The difference in the player's average **LEBRON** score between the two seasons *before* injury and the two seasons *post-recovery*. If two seasons were not available, only one was used. A score of `-10` indicates the player **did not return** to play in the NBA, often due to an inability to fully recover.
 
- - Previous injury describes the player's injury history with an integer: 0 if they have never suffered one of the three injuries at a previous moment in their careers, 1 if they have.
+*   **BPM diff**: The difference in the player's average **BPM** score between the two seasons *before* injury and the two seasons *post-recovery*. Similar to LEBRON diff, only one season was used if two were unavailable. A score of `-10` also signifies that the player **did not return** to play in the NBA.
 
- - Change describes the impact of the injury on the player's performance with one of four integers, determined by looking at the LEBRON diff and BPM diff columns: 1 if their performance significantly decreased, 2 if their performance dropped a medium amount, 3 if there was minimal to no change, and 4 if they returned and improved.
+*   **Age**: The age of the athlete at the time of injury.
 
- - O-LEBRON diff is the difference in the average on the player's O-LEBRON score of the two seasons before injury and the two seasons post-recovery. If a player did not play two seasons before or after the injury, only one was used. Scores of -5 in this column indicate that the player did not return to play in the NBA after the injury.
+*   **Height**: The player's height in inches.
 
- - D-LEBRON diff is the difference in the average on the player's D-LEBRON score of the two seasons before injury and the two seasons post-recovery. If a player did not play two seasons before or after the injury, only one was used, and scores of -5 in this column indicate that the player did not return to play in the NBA after the injury.
+*   **Weight**: The player's weight in pounds.
 
- - Avg minutes indicates the average amount of minutes that player played per game in the season prior to injury.
+*   **Previous injury**: Indicates the player's history with one of the three specified serious injuries:
+    *   `0`: No previous occurrence of an ACL, Achilles, or meniscus tear.
+    *   `1`: Has previously suffered one of these three injuries.
 
- - O-change describes the impact of the injury on the player's offensive performance with one of four integers, determined by looking at the O-LEBRON diff column: 1 if their performance significantly decreased, 2 if their performance dropped a medium amount, 3 if there was minimal to no change, and 4 if they returned and improved.
- 
- - D-change describes the impact of the injury on the player's defensive performance with one of four integers, determined by looking at the D-LEBRON diff column: 1 if their performance significantly decreased, 2 if their performance dropped a medium amount, 3 if there was minimal to no change, and 4 if they returned and improved.
+*   **Change**: Describes the overall impact of the injury on the player's performance, categorized by analyzing **LEBRON diff** and **BPM diff**:
+    *   `1`: Performance significantly decreased.
+    *   `2`: Performance dropped a medium amount.
+    *   `3`: Minimal to no change in performance.
+    *   `4`: Player returned and improved performance.
 
- Source: https://github.com/derekgao2/NBA-Injuries 
+*   **O-LEBRON diff**: The difference in the player's average **Offensive LEBRON** score between the two seasons *before* injury and the two seasons *post-recovery*. A score of `-5` indicates the player **did not return** to play in the NBA.
+
+*   **D-LEBRON diff**: The difference in the player's average **Defensive LEBRON** score between the two seasons *before* injury and the two seasons *post-recovery*. A score of `-5` indicates the player **did not return** to play in the NBA.
+
+*   **Avg minutes**: The average minutes played per game in the season *prior* to injury.
+
+*   **O-change**: Describes the impact of the injury on the player's **offensive performance**, based on **O-LEBRON diff**:
+    *   `1`: Performance significantly decreased.
+    *   `2`: Performance dropped a medium amount.
+    *   `3`: Minimal to no change in performance.
+    *   `4`: Player returned and improved performance.
+
+*   **D-change**: Describes the impact of the injury on the player's **defensive performance**, based on **D-LEBRON diff**:
+    *   `1`: Performance significantly decreased.
+    *   `2`: Performance dropped a medium amount.
+    *   `3`: Minimal to no change in performance.
+    *   `4`: Player returned and improved performance.
+
+## Conclusion:
+
+This dataset provides a comprehensive basis for exploring various factors influencing NBA player recovery and performance after serious knee and Achilles injuries. The detailed features allow for in-depth analysis of correlations between player characteristics, injury types, and post-injury career trajectories.
+
+---
+
+## Source:
+
+[NBA-Injuries GitHub Repository](https://github.com/derekgao2/NBA-Injuries) 
